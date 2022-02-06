@@ -2,9 +2,27 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Safe Engine</title>
+<title>SafeNG</title>
 {% load static %}
 <link rel = "stylesheet" href = "{% static 'style.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--<script>	
+var url= $('#userinput')
+$('#checksec').click(function() {
+alert("xxxx");
+	return false;
+});
+/*	$.ajax({
+    	type: 'POST',
+	url: '{% url 'safecheckwebsite' %}',
+    	data: url:url,
+    	success: function(res) {
+        	alert(res)
+    }
+	)};
+	*/
+</script>
+-->
 </head>
 <body>
 
@@ -12,7 +30,7 @@
 
 <!-- Search Logo Text -->
 <div class = "logo" align = "center">
-     Safe Engine
+     SafeNG
 </div>
 
 <!-- Search Bar -->
@@ -26,35 +44,26 @@
 <div align = "center">
 	  <input type="submit" value="Go!" class="buttons button1">
   	  <button class="buttons button2" onclick="document.getElementById('userinput').value = '';return false;">Clear</button>
-
 </div>
-</form>
 
 <br>
-<!-- Check Boxes -->
+<!-- Radio Buttons -->
 <div>
-
-  <label class="container"> Text
- <input type="checkbox" checked="checked">
- <span class="checkmark"></span>
-</label>
-
-<label class="container"> Web Design
- <input type="checkbox">
- <span class="checkmark"></span>
-</label>
-
-<label class="container">Images
- <input type="checkbox">
- <span class="checkmark"></span>
-</label>
-
-<label class="container">Videos
- <input type="checkbox">
- <span class="checkmark"></span>
-</label>
+  <label class="container">Low Safety
+    <input type="radio" checked="checked" name="radio" value="low" id="low">
+    <span class="checkmark"></span>
+  </label>
+  <label class="container">Medium Safety
+	  <input type="radio" name="radio" id="med" value="med">
+    <span class="checkmark"></span>
+  </label>
+  <label class="container">High Safety
+    <input type="radio" name="radio" id="high" value="high">
+    <span class="checkmark"></span>
+  </label>
 </div>
 
+</form>
 
 </div>
 </body>
